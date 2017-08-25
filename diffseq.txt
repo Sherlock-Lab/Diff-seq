@@ -1,0 +1,28 @@
+This is a tool to help call variants in Diff-seq datasets.
+process processes raw reads from paired-end sequencing data and makes some basic files that are used in analysis.
+analysis uses the raw data and outputs files that are used in the figures. 
+
+Usage: diffseq.py ( merge | dedup | trimadaptors | filter | align | coverage | coverageplots | stacked | heatmap | diffsignal | model | removePhiX | prepareDS | prepareNX | dilutioncomparison | posfreq ) [ --data <data> ] [ --control <control> ] [ --reference <reference> ] [ --out <out> ] [ --SNPfile <SNPfile> ]  [ --percentage <percentage> ]
+	   diffseq.py ( dedup ) [ --data <data> ]
+	   diffseq.py ( trimadaptors ) [ --data <data> ]
+	   diffseq.py ( filter ) [ --data <data> ]
+	   diffseq.py ( align ) [ --data <data> ] [ --reference <reference> ]
+	   diffseq.py ( coverage ) [ --data <data> ] [ --reference <reference> ]
+	   diffseq.py ( coverageplots ) [ --data <data> ] [ --reference <reference> ]
+	   diffseq.py ( stacked ) [ --data <data> ] [ --out <out> ] [ --reference <reference> ] [ --SNPfile <SNPfile> ]
+	   diffseq.py ( heatmap ) [ --data <data> ] [ --reference <reference> ] [ --SNPfile <SNPfile> ]
+	   diffseq.py ( diffsignal ) [ --data <data> ] [ --control <control> ] [ --reference <reference> ] [ --SNPfile <SNPfile> ] [ --percentage <percentage> ]
+	   diffseq.py ( model ) [ --data <data> ] [ --reference <reference> ] [ --SNPfile <SNPfile> ]
+	   diffseq.py ( removePhiX ) [ --data <data> ]
+	   diffseq.py ( prepareDS ) [ --data <data> ] [ --reference <reference> ] [ --SNPfile <SNPfile> ]
+	   diffseq.py ( prepareNX ) [ --data <data> ] [ --SNPfile <SNPfile> ]
+	   diffseq.py ( dilutioncomparison ) [ --SNPfile <SNPfile> ] [ --out <out> ]
+	   diffseq.py ( posfreq ) [ --data <data> ] [ --SNPfile <SNPfile> ] [ --reference <reference> ]
+
+Options:
+    —-data <data>            	Provide the name of the sequencing data (paired-end)
+    --control <control>		 	Provide the name of the control, matched sequencing data
+    --reference <reference>  	Provide the reference name (for alignment purposes)
+    --out <out>  			 	Provide a name for an outfile
+    --SNPfile <SNPfile> 	 	Provide the name of a file that contains known polymorphisms of the data
+    --percentage <percentage>   Provide with the percentage of the diff-seq library in question for axis labeling purposes

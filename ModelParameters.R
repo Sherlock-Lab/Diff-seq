@@ -1,0 +1,31 @@
+#!/usr/bin/env
+args = commandArgs(trailingOnly=TRUE)
+
+library(ggplot2)
+library(AUC)
+library(ROCR)
+
+dat=read.table(args[1],sep='\t',header=T)
+pdf(args[2],width=10, height=6)
+roc1=roc(dat$TotfZ+dat$TotrZ,dat$Status)
+roc2=roc(dat$TotMinfZ+dat$TotMinrZ,dat$Status)
+roc3=roc(dat$MajfZ+dat$MajrZ,dat$Status)
+roc4=roc(dat$MinfZ+dat$MinrZ,dat$Status)
+roc5=roc(dat$TriN1f+dat$TriN1r,dat$Status)
+roc6=roc(dat$TriN2f+dat$TriN2r,dat$Status)
+auc(roc1)
+auc(roc2)
+auc(roc3)
+auc(roc4)
+auc(roc5)
+auc(roc6)
+
+plot(roc1,cex.axis="1.4",cex.lab="1.4")
+plot(roc2,add=TRUE,col='red')
+plot(roc3,add=TRUE,col='blue')
+plot(roc4,add=TRUE,col='pink')
+plot(roc5,add=TRUE,col='light blue')
+plot(roc6,add=TRUE,col='yellow')
+
+legend("bottomright",legend=c("Total Coverage","Minor Allele Coverage","Major Allele Coverage (Allele ID)","Minor Allele Coverage (Allele ID)","Major Allele Coverage (Trinucleotide ID)","Minor Allele Coverage (Trinucleotide ID)"),col=c("black","red", "blue","pink", "light blue", "yellow"), lty=c(1,1,1,1,1,1))
+dev.off()

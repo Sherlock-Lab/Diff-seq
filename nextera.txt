@@ -1,0 +1,13 @@
+This is a tool to analyze nextera data in a way that is useful for comparison with diff-seq datasets.
+processNX processes raw reads from paired-end sequencing data and makes some basic files that are used in analysis. 
+
+Usage: nextera.py ( trim | align | coverage ) [ --data <data> ] [ --reference <reference> ]
+	   nextera.py ( trim ) [ --data <data> ]
+	   nextera.py ( align ) [ --data <data> ] [ --reference <reference> ]
+	   nextera.py ( coverage ) [ --data <data> ] [ --reference <reference> ]
+	   
+
+Options:
+    —-data <data>            Provide the name of the sequencing data (paired-end)
+    --reference <reference>  Provide the reference name
+    
