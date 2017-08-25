@@ -14,6 +14,11 @@ numpy
 docopt
 pysam
 
+Apart from the fastq files derived from sequencing of diff-seq or nextera libraries (organized in DataFolder/RawData and DataFolderNX/RawData, respectively), the following folders are also required: 
+1. Reference/<Reference_name> with a tab delimited file <Reference.txt> with just the reference sequence and a bowtie2 folder with an indexed fasta file.
+2. Polymorphisms with tab delimited file containing the polymorphisms known to be present in the sample
+3. Software 
+
 from the directory that the diffseq.py is in run:
 
 To eliminate sequences that derive from PhiX intending for internal control
